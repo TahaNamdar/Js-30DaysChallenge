@@ -37,4 +37,33 @@ var createCounter = function (n: number) {
   };
 };
 
-//counter =========================================
+//counter2 =========================================
+
+type Counter = {
+  increment: () => number;
+  decrement: () => number;
+  reset: () => number;
+};
+
+function createCounter2(init: number): Counter {
+  let value = init;
+
+  function increment() {
+    return ++value;
+  }
+
+  function decrement() {
+    return --value;
+  }
+
+  function reset() {
+    value = init;
+    return value;
+  }
+
+  return {
+    increment: increment,
+    decrement: decrement,
+    reset: reset,
+  };
+}

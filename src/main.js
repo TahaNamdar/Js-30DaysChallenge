@@ -28,4 +28,21 @@ var createCounter = function (n) {
         return counter++;
     };
 };
-//counter =========================================
+function createCounter2(init) {
+    let value = init;
+    function increment() {
+        return ++value;
+    }
+    function decrement() {
+        return --value;
+    }
+    function reset() {
+        value = init;
+        return value;
+    }
+    return {
+        increment: increment,
+        decrement: decrement,
+        reset: reset,
+    };
+}
