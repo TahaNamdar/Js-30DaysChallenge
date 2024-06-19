@@ -21,4 +21,11 @@ const counter1 = increment();
 const counter2 = increment();
 console.log(counter1.result());
 console.log(counter2.result());
-//closure =========================================
+//counter =========================================
+var createCounter = function (n) {
+    let counter = n;
+    return function () {
+        return counter++;
+    };
+};
+//counter =========================================
